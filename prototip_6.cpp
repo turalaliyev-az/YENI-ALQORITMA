@@ -230,3 +230,29 @@ int main() {
     cout << "\n⏱️  Toplam süre: " << duration << " saniye\n";
     return 0;
 }
+
+//Math formula:
+//count_less(x) = Σ (for each block b where b.max_value < x) b.size + count in block containing x
+// where count in block containing x = lower_bound in that block
+// This reduces the number of comparisons significantly by skipping entire blocks
+// ---------------- Fibonaccı blokları oluştur ----------------
+/*
+// ---------------- Fibonaccı blokları oluştur ----------------
+vector<size_t> fibonacci_blocks(size_t n, size_t max_blocks) {
+    vector<size_t> fib_sizes;
+    size_t remaining = n;
+    size_t i = 2; // Start from F(2)=1
+    while (remaining > 0 && fib_sizes.size() < max_blocks) {
+        size_t fib_val = MathUtils::fibonacci(i);
+        if (fib_val == 0) fib_val = 1;
+        size_t block_size = min(fib_val, remaining);
+        fib_sizes.push_back(block_size);
+        remaining -= block_size;
+        i++;
+    }
+    if (remaining > 0) {
+        fib_sizes.back() += remaining; // Add any leftover to the last block
+    }
+    return fib_sizes;
+}
+*/
