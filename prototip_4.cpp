@@ -79,10 +79,10 @@ u64 query_count_less_main(const vector<u32>& sorted, const vector<Block>& blocks
 }
 
 int main() {
-    const size_t N = 1'000'000000; // 1 milyard element
+    const size_t N = 1'000'000; // 1 milyard element
     const size_t MAX_BLOCKS = 64;   // Fibonacci block count
     mt19937_64 rng(123456789ULL);
-    uniform_int_distribution<u32> dist(1, 1'000'000'000);
+    uniform_int_distribution<u32> dist(1, 1'000'000);
 
     cerr << "Generating " << N << " random elements...\n";
     vector<u32> nums(N);
