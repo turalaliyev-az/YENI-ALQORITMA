@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+//#include <immintrin.h>
 using namespace std;
 
 using u32 = uint32_t;
@@ -172,15 +173,17 @@ public:
 int main() {
     cout << "🔬 OPTİMİZE FİBONACCİ-ASAL BLOKLAMA ALGORİTMASI (Sınırsız Fibonacci & Prime)\n\n";
 
-    const size_t DATA_SIZE = 100000000; // Test için büyük veri
+    const size_t DATA_SIZE = 1000000000; // Test için daha küçük veri boyutu
     vector<u32> test_data(DATA_SIZE);
     mt19937 rng(42);
     uniform_int_distribution<u32> dist(1, numeric_limits<u32>::max());
 
     for (size_t i = 0; i < DATA_SIZE; ++i)
         test_data[i] = dist(rng);
-
-    vector<u32> test_queries = {0, 1, 50000, 100000, 100001};
+     // Test sorguları
+    vector<u32> test_queries= {0, 1, 50000000, 100000000, 100000001};
+    // sorgunnuntetbiqi istenilen sayıda random sorgu ekle
+    //vector<u32> test_queries = {0, 1, 50000, 100000, 100001};
     for (int i = 0; i < 20; ++i)
         test_queries.push_back(dist(rng));
 
